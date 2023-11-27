@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 const Registro = () => {
   const { login } = useSession();
-  const navigate = useNavigate();
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,12 +34,14 @@ const Registro = () => {
       email,
       password,
     };
-    fetch("http://3.84.3.107/api/v1/user/createUser", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/user/createUser`, {
+   method: "POST",
+   headers: {
+     "Content-Type": "application/json",
+   },
+   body: JSON.stringify(user),
+});
+
     })
       .then((response) => response.json())
       .then(async (data) => {
@@ -100,3 +102,4 @@ const Registro = () => {
 };
 
 export default Registro;
+
