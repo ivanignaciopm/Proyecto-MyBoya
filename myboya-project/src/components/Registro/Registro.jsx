@@ -1,12 +1,6 @@
-import React, { useState, useEffect } from "react";
-import "./Registro.css";
-import { useNavigate } from "react-router-dom";
-import { useSession } from "../../context/useSession";
-import { toast } from "react-toastify";
-
 const Registro = () => {
   const { login } = useSession();
-  const navigate = useNavigate();
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -35,13 +29,11 @@ const Registro = () => {
       password,
     };
     fetch(`${import.meta.env.VITE_BACKEND_URL}/user/createUser`, {
-   method: "POST",
-   headers: {
-     "Content-Type": "application/json",
-   },
-   body: JSON.stringify(user),
-});
-
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
     })
       .then((response) => response.json())
       .then(async (data) => {
@@ -102,4 +94,3 @@ const Registro = () => {
 };
 
 export default Registro;
-
