@@ -34,7 +34,7 @@ const Registro = () => {
       email,
       password,
     };
-    fetch("http://localhost:3000/api/v1/user/createUser", {
+    fetch("http://3.84.3.107/api/v1/user/createUser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
