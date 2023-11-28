@@ -1,7 +1,7 @@
 
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { useSession } from '/context/useSession.jsx';
+import { useSession } from '../../context/useSession';
 import { useEffect } from 'react';
 const Registro = () => {
   const { login } = useSession();
